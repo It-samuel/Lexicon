@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "cra-template": "1.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -35,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "babel": "@babel/plugin-proposal-private-property-in-object",
     "json-server": "^1.0.0-beta.3",
     "json-server-auth": "^2.1.0",
     "tailwindcss": "^3.4.17"

@@ -1,23 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { AllRoutes } from './routes/Allroutes';
+import { Footer, Header } from './components';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Let the party begin yoooooo
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <AllRoutes />
+      <Footer />
     </div>
   );
 }
