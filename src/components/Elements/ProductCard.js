@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Ratings } from "./Ratings";
  
 export const ProductCard = ({products}) => {
   const {id, name, overview, poster, price, rating, best_seller} = products
@@ -20,12 +21,13 @@ export const ProductCard = ({products}) => {
             {overview}
           </p>
           <div className="flex items-center my-2">
+              <Ratings rating={rating}/>
+                {/* <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
                 <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
                 <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
                 <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
                 <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
-                <i className="text-lg bi bi-star-fill text-yellow-500 mr-1"></i>
-                <i className="text-lg bi bi-star text-yellow-500 mr-1"></i>
+                <i className="text-lg bi bi-star text-yellow-500 mr-1"></i> */}
             </div>
 
             <p className="flex justify-between items-center">
