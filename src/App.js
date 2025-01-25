@@ -3,7 +3,7 @@ import { Footer, Header } from './components';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App  dark:border-gray-700">
       <Header />
       <AllRoutes />
       <Footer />

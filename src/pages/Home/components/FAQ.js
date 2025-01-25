@@ -4,7 +4,7 @@ export const Faq = () => {
     const faqs = [
         {
           "id": 1,
-          "question": "Why should I use CodeBook?",
+          "question": "Why should I use Lexicon?",
           "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus earum dicta nesciunt, nulla alias consequuntur cumque incidunt saepe mollitia esse! Magni praesentium delectus excepturi nostrum illo repellendus cum eius neque, aperiam dolores quaerat quis dolore magnam doloremque minus sint nemo qui necessitatibus at. Perspiciatis, corrupti cum labore quos odio porro!"
         },
         {
@@ -26,7 +26,7 @@ export const Faq = () => {
     
   return (
     <section className="my-10 p-7 border rounded dark:border-slate-700 shadow-sm">        
-      <h1 className="text-2xl text-center font-semibold dark:text-slate-100 mb-3 underline underline-offset-8">Question in mind?</h1>    
+      <h1 className="text-2xl text-center font-semibold  dark:text-slate-100 mb-3 underline underline-offset-8">Question in mind?</h1>    
             <div className="" id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
               { faqs.map((faq) => (
                 <Accordion key={faq.id} faq={faq} /> 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+ 
 export const ProductCard = () => {
   return (
     <div className="m-3 max-w-sm bg-white rounded-lg border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
