@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ScrollToTop } from './components/Other/ScrollToTop';
+import { FilterContext } from './Context/filterContext';
 
 
 
@@ -12,8 +13,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <FilterContext>
       <ScrollToTop />
       <App />
+      </FilterContext>
     </Router>
   </React.StrictMode>
 );
