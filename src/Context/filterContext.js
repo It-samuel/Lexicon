@@ -1,4 +1,4 @@
-import { Children, createContext, useContext } from "react"
+import { createContext, useContext } from "react"
 
 const filterInitialState = {
     productList: [],
