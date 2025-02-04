@@ -5,7 +5,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ScrollToTop } from './components/Other/ScrollToTop';
-
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <ScrollToTop />
+      <ToastContainer closeButton={false} autoClose={3000} />
       <App />
     </Router>
   </React.StrictMode>
