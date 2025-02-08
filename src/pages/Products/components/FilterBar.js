@@ -1,7 +1,7 @@
-// import { useFilter } from "../../../context";
+import { useFilter } from "../../../Context/filterContext";
 
 export const FilterBar = ({setShow}) => {
-//   const {state, dispatch} = useFilter();
+  const {state, dispatch} = useFilter();
 
   return (
     <section className="filter">

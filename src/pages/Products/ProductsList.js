@@ -10,15 +10,31 @@ export const ProductsList = () => {
 
   const [show, setShow] = useState(false);
   const [products, setProducts] = useState([]);
+
+  
   const search = useLocation().search;
-  const searchTerm = new URLSearchParams(search).get("q")
+  const searchTerm = new URLSearchParams(search).get("q");
+
+  console.log("Search Term:", searchTerm); // Debugging
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch(`http://localhost:3000/products?name_like=${ searchTerm ? searchTerm :""}`);
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const url = searchTerm
+          ? `http://localhost:3000/products?name_like=${searchTerm}`
+          : `http://localhost:3000/products`;
+
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Failed to fetch products");
+
+        const data = await response.json();
+        console.log("Fetched Products:", data); // Debugging
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     }
+
     fetchProducts();
   }, [searchTerm]);
 
