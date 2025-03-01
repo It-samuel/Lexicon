@@ -21,9 +21,10 @@ export const DropdownLoggedIn = ({setDropdown}) => {
     // }, []); //eslint-disable-line
 
     function handleLogout(){
-        // logout();
-        setDropdown(false);
-        navigate("/");
+        sessionStorage.removeItem("token")
+        sessionStorage.removeItem("cbid")
+        navigate("/")
+        
     }
 
   return (
