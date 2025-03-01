@@ -295,6 +295,12 @@
       "password": "$2a$10$qd/gS6k8DcNUAzUUg7HKIOZrEX9ILwss/ImwKvrROEKxxtWlvDi3G",
       "name": "Samuelhappy",
       "id": 3
+    },
+    {
+      "email": "samuel0@gmail.com",
+      "password": "$2a$10$vT7qzfyquKhysLNk5btrZumnzSLgJxGq7dhfzN2s3.LyV4Qia6ds2",
+      "name": "Samuel xxx",
+      "id": 4
     }
   ]
 }

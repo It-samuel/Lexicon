@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-// import { toast } from 'react-toastify/';
+import { toast } from 'react-toastify';
 
 
 
@@ -24,8 +24,8 @@ export const Register = () => {
         });
 
         const data = await response.json();
-        // data.accessToken ? navigate("/products") : toast.error(data);
-        console.log(data)
+        data.accessToken ? navigate("/products") : toast.error(data);
+       
         
     }
 
