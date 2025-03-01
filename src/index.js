@@ -7,15 +7,19 @@ import reportWebVitals from './reportWebVitals';
 import { ScrollToTop } from './components/Other/ScrollToTop';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FilterProvider } from './Context/filterContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      
+      <FilterProvider>
       <ScrollToTop />
       <ToastContainer closeButton={false} autoClose={3000} />
       <App />
+      </FilterProvider>
     </Router>
   </React.StrictMode>
 );

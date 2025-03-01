@@ -3,13 +3,12 @@ import { createContext, useContext, useReducer } from "react"
 import { filterReducer } from '../Reducers/index'
 
 const filterInitialState = {
-    productList: [],
+    productList: [1, 2, 3],
     onlyInStock: false,
     bestSellerOnly: false,
     sortBy: null,
     ratings: null
 }
-
 const FilterContext = createContext(filterInitialState);
 
 export const FilterProvider = ({children}) => {
@@ -25,7 +24,7 @@ export const FilterProvider = ({children}) => {
     }
 
     function bestSeller(products){
-        return state.bestSellerOnly ? products.filter(product => product.best_seller === true) : products;
+        return state.bestSellerOnly ? products.filter(product => products.best_seller === true) : products;
     }
 
     function inStock(products){

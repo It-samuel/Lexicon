@@ -1,1 +1,1 @@
-export {filterReducer} from './filterReducers'
+export {filterReducer} from '../Reducers/filterReducers'

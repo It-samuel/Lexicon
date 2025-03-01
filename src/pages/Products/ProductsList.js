@@ -3,6 +3,7 @@ import { ProductCard } from "../../components/";
 import { FilterBar } from "./components/FilterBar";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { useFilter } from "../../Context";
 
 export const ProductsList = () => {
   
@@ -15,7 +16,7 @@ export const ProductsList = () => {
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
 
-  console.log("Search Term:", searchTerm); // Debugging
+  
 
   useEffect(() => {
     async function fetchProducts() {
@@ -28,7 +29,7 @@ export const ProductsList = () => {
         if (!response.ok) throw new Error("Failed to fetch products");
 
         const data = await response.json();
-        console.log("Fetched Products:", data); // Debugging
+     
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);

@@ -4,11 +4,11 @@ export const filterReducer = (state, action) => {
     switch(type){
 
         case "PRODUCT_LIST":
-            return { productList: payload.products }
+            return { ProductsList: payload.products }
         
         case "SORT_BY":
-            return {...state, sortBy: payload.sortBy}
-        
+            return { ...state, sortBy: action.payload.sortBy };  
+              
         case "RATINGS":
             return {...state, ratings: payload.ratings}
         
