@@ -14,6 +14,9 @@ export const ProductDetail = () => {
  
   useTitle(product.name)
 
+  
+
+
   useEffect(() => { 
       async function fetchProducts() {
         const response = await fetch(`http://localhost:3000/products/${id}`);
@@ -23,6 +26,17 @@ export const ProductDetail = () => {
       }
       fetchProducts();
     },[id])
+
+  useEffect(() => {
+      const productInCart = cartList.find(item => item.id === product.id);
+  
+      if(productInCart){
+          setInCart(true);
+      } else {
+          setInCart(false);
+      }
+  
+  }, [cartList, product.id]);
 
   return (
     <main>

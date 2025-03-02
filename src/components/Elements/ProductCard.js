@@ -9,6 +9,8 @@ export const ProductCard = ({products}) => {
     const [inCart, setInCart] = useState(false);
   const {id, name, overview, poster, price, rating, best_seller} = products
 
+ 
+
   useEffect(() => {
     const productInCart = cartList.find(item => item.id === products.id);
 
