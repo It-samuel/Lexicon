@@ -23,7 +23,9 @@ export const DropdownLoggedIn = ({setDropdown}) => {
     function handleLogout(){
         sessionStorage.removeItem("token")
         sessionStorage.removeItem("cbid")
+        setDropdown(false);
         navigate("/")
+        
         
     }
 

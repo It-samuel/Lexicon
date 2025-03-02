@@ -8,18 +8,20 @@ import { ScrollToTop } from './components/Other/ScrollToTop';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FilterProvider } from './Context/filterContext';
+import { CartProvider } from './Context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      
+      <CartProvider>
       <FilterProvider>
       <ScrollToTop />
       <ToastContainer closeButton={false} autoClose={3000} />
       <App />
       </FilterProvider>
+      </CartProvider>
     </Router>
   </React.StrictMode>
 );
