@@ -7,32 +7,27 @@ import { useCart } from "../../../Context";
 export const CheckOut = ({setCheckout}) => {
   const { cartList, total, clearCart } = useCart();
   const [user, setUser] = useState({});
-
+  
   const navigate = useNavigate();
 
-//   useEffect(() => {
-//     async function fetchData(){
-//         try{
-//             const data = await getUser();
-//             setUser(data);
-//         } catch(error){
-//             toast.error(error.message, { closeButton: true, position: "bottom-center" });
-//         }        
-//     }
-//     fetchData();
-//   }, []);
-
-//   async function handleOrderSubmit(event){
-//     event.preventDefault();
-//     try {
-//         const data = await createOrder(cartList, total, user);
-//         clearCart();
-//         navigate("/order-summary", { state: {data: data, status: true} });
-//     } catch(error) {
-//         toast.error(error.message, { closeButton: true, position: "bottom-center" });
-//         navigate("/order-summary", { state: {status: false} });
-//     }
-//   }
+  useEffect(() => {
+    const token = JSON.parse(sessionStorage.getItem("token"))
+    const cbid = JSON.parse(sessionStorage.getItem("cbid"))
+    
+    async function getUser(){
+      const response = await fetch(`http://localhost:3000/600/users/${cbid}`, {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json", 
+          'Authorization': `Bearer ${token}`  // Changed from 'Authorisation' to 'Authorization'
+        }
+      })
+      const data = await response.json();
+      setUser(data)
+    }
+    
+    getUser()
+  }, [])
 
   return (
     <section>
