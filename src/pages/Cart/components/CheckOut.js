@@ -33,27 +33,33 @@ export const CheckOut = ({setCheckout}) => {
   async function handleOrderSubmit(e){
     e.preventDefault();
 
-    const order = {
-        cartList: cartList,
-        amount_paid: total,
-        quantity: cartList.length,
-        user: {
-            name: user.name,
-            email: user.email,
-            id: user.id
-        }
-    }
+   
 
-    const response = await fetch("http://localhost:3000/660/orders",{
+    try {
+        const order = {
+            cartList: cartList,
+            amount_paid: total,
+            quantity: cartList.length,
+            user: {
+                name: user.name,
+                email: user.email,
+                id: user.id
+            }
+        }
+        
+        const response = await fetch("http://localhost:3000/660/orders",{
         method:"POST",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`},
         body: JSON.stringify(order)
-    })
-    const data = await response.json()
-    clearCart()
-    // In handleOrderSubmit function
-    navigate("/order-summary", {state: {status: true, data: data}});
-  }
+        })
+        const data = await response.json()
+        clearCart()
+        // In handleOrderSubmit function
+        navigate("/order-summary", {state: {status: true, data: data}});
+        } catch(error){
+            navigate("/order-summary", {state: {status: false,}});
+        }
+    }
 
   return (
     <section>
