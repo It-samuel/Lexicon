@@ -4,6 +4,7 @@ import { FilterBar } from "./components/FilterBar";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../Context";
+import { getProductList } from "../../services";
 
 export const ProductsList = () => {
   
@@ -21,15 +22,7 @@ export const ProductsList = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const url = searchTerm
-          ? `http://localhost:3000/products?name_like=${searchTerm}`
-          : `http://localhost:3000/products`;
-
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Failed to fetch products");
-
-        const data = await response.json();
-     
+        const data = await getProductList(searchTerm)
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
