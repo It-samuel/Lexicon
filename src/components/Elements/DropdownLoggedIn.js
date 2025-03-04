@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { logout } from "../../services";
 // import { getUser, logout } from "../../services";
 
 export const DropdownLoggedIn = ({setDropdown}) => {
@@ -21,8 +22,8 @@ export const DropdownLoggedIn = ({setDropdown}) => {
     // }, []); //eslint-disable-line
 
     function handleLogout(){
-        sessionStorage.removeItem("token")
-        sessionStorage.removeItem("cbid")
+        logout()
+        
         setDropdown(false);
         navigate("/")
         
