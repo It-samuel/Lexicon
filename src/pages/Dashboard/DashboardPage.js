@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { useTitle } from '../../hooks/useTitle';
 import { DashboardEmpty } from './components/DashboardEmpty'
 import { DashboardCard } from './components/DashboardCard'
 import { getUserOrders } from '../../services/dataService';
@@ -7,7 +7,7 @@ import { getUserOrders } from '../../services/dataService';
 export const DashboardPage = () => {
     const [orders, setOrders] = useState([]);
     
-    // useTitle("Dashboard");
+    useTitle("Dashboard");
 
     useEffect(() => {
         async function fetchOrders() {
