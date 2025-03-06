@@ -3,7 +3,7 @@ import { ProductCard } from "../../components/";
 import { FilterBar } from "./components/FilterBar";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
-import { useFilter } from "../../Context";
+
 import { getProductList } from "../../services";
 
 export const ProductsList = () => {

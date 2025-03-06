@@ -1,5 +1,5 @@
 export async function login(authDetail) {
-    const  response = await fetch("http://localhost:3000/login", {
+    const  response = await fetch(`${process.env.REACT_APP_HOST}/login`, {
         method: "POST",
         headers: {"content-Type": "application/json"},
         body: JSON.stringify(authDetail)
@@ -19,7 +19,7 @@ export async function login(authDetail) {
 
 export async function register(authDetail) {
     
-    const  response = await fetch("http://localhost:3000/register", {
+    const  response = await fetch(`${process.env.REACT_APP_HOST}/register`, {
         method: "POST",
         headers: {"content-Type": "application/json"},
         body: JSON.stringify(authDetail)
