@@ -14,7 +14,7 @@ export async function getUser() {
         }}
     
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${browserData.cbid}`, requestOption  );
+    const response = await fetch(`${process.env.REACT_APP_HOST}/users/${browserData.cbid}`, requestOption  );
 
     const data = await response.json();
     return data
@@ -23,7 +23,7 @@ export async function getUser() {
 
 export async function getUserOrders() {
     const browserData = getSession();
-    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${browserData.cbid}`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/orders?user.id=${browserData.cbid}`, {
         method: "GET",
         headers: {
           "Content-type": "application/json", 
@@ -48,7 +48,7 @@ export async function createOrder(cartList, total, user) {
         }
     }
     
-    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`,{
+    const response = await fetch(`${process.env.REACT_APP_HOST}/orders`,{
     method:"POST",
     headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`},
     body: JSON.stringify(order)
