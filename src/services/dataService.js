@@ -12,6 +12,7 @@ export async function getUser() {
           "Content-type": "application/json", 
           'Authorization': `Bearer ${browserData.token}`  
         }}
+        // end
     
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/users/${browserData.cbid}`, requestOption  );
