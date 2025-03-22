@@ -1,9 +1,8 @@
-
 import { createContext, useContext, useReducer } from "react"
 import { filterReducer } from '../Reducers/index'
 
 const filterInitialState = {
-    productList: [1, 2, 3],
+    productList: [],
     onlyInStock: false,
     bestSellerOnly: false,
     sortBy: null,
@@ -24,24 +23,32 @@ export const FilterProvider = ({children}) => {
     }
 
     function bestSeller(products){
-        return state.bestSellerOnly ? products.filter(product => products.best_seller === true) : products;
+        // Check if products exist before filtering
+        if (!products) return [];
+        return state.bestSellerOnly ? products.filter(product => product.best_seller === true) : products;
     }
 
     function inStock(products){
+        if (!products) return [];
         return state.onlyInStock ? products.filter(product => product.in_stock === true) : products;
     }
     
     function sort(products){
+        if (!products || products.length === 0) return [];
+        
         if(state.sortBy === "lowtohigh"){
-            return products.sort((a, b) => Number(a.price) - Number(b.price));
+            // Create a new array to avoid mutating the original
+            return [...products].sort((a, b) => Number(a.price) - Number(b.price));
         }
         if(state.sortBy === "hightolow"){
-            return products.sort((a, b) => Number(b.price) - Number(a.price));
+            return [...products].sort((a, b) => Number(b.price) - Number(a.price));
         }
         return products;
     }
 
     function rating(products){
+        if (!products) return [];
+        
         if(state.ratings === "4STARSABOVE"){
             return products.filter(product => product.rating >= 4);
         }
@@ -57,6 +64,7 @@ export const FilterProvider = ({children}) => {
         return products;
     }
 
+    // Apply filters to the product list
     const filteredProductList = rating(sort(inStock(bestSeller(state.productList))));
 
     const value = {

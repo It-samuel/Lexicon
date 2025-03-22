@@ -3,34 +3,31 @@ import { ProductCard } from "../../components/";
 import { FilterBar } from "./components/FilterBar";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { useFilter } from "../../Context/filterContext";
 
 import { getProductList } from "../../services";
 
 export const ProductsList = () => {
-  
   useTitle("Explore eBooks Collection");
-     
+  
   const [show, setShow] = useState(false);
-  const [products, setProducts] = useState([]);
-
+  const { initialProductList, products } = useFilter();
   
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
 
-  
-
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const data = await getProductList(searchTerm)
-        setProducts(data);
+        const data = await getProductList(searchTerm);
+        initialProductList(data); // Initialize products in filter context
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     }
 
     fetchProducts();
-  }, [searchTerm]);
+  }, [searchTerm, initialProductList]);
 
   return (
     <main>
@@ -61,9 +58,15 @@ export const ProductsList = () => {
         </div>
 
         <div className="flex flex-wrap justify-center lg:flex-row">
-          {products.map((product) => (
-            <ProductCard key={product.id} products={product} />
-          ))}
+          {products && products.length > 0 ? (
+            products.map((product) => (
+              <ProductCard key={product.id} products={product} />
+            ))
+          ) : (
+            <p className="text-center w-full py-10 text-xl dark:text-white">
+              No products found matching your filters.
+            </p>
+          )}
         </div>
       </section>
 
