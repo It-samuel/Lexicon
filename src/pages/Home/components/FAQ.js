@@ -5,22 +5,22 @@ export const Faq = () => {
         {
           "id": 1,
           "question": "Why should I use Lexicon?",
-          "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus earum dicta nesciunt, nulla alias consequuntur cumque incidunt saepe mollitia esse! Magni praesentium delectus excepturi nostrum illo repellendus cum eius neque, aperiam dolores quaerat quis dolore magnam doloremque minus sint nemo qui necessitatibus at. Perspiciatis, corrupti cum labore quos odio porro!"
+          "answer": "Lexicon is your one-stop destination for a seamless and enjoyable eBook shopping experience. With a vast library of titles, user-friendly navigation, and secure payment options, Lexicon makes it easy to discover, purchase, and read your favorite books. Whether you're at home or on the go, Lexicon ensures that your reading journey is smooth, affordable, and accessible."
         },
         {
           "id": 2,
           "question": "Can I access my eBook on mobile?",
-          "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus nobis tempore perferendis qui, quam, atque reprehenderit vero quaerat, assumenda pariatur eveniet. Maxime eaque, neque corrupti ad minus repudiandae consectetur!"
+          "answer": "Yes! Lexicon is designed to be fully responsive, allowing you to access your eBooks on any device, including smartphones and tablets. Simply log in to your account from your mobile browser, and your entire library will be at your fingertips. Enjoy reading anytime, anywhere!"
         },
         {
           "id": 3,
           "question": "Do you offer refunds?",
-          "answer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi."
+          "answer": "We want you to be completely satisfied with your purchase. If you encounter any issues with your eBook or are dissatisfied for any reason, please contact our support team within 14 days of purchase. We’ll be happy to assist you with a refund or replacement, provided the request meets our refund policy criteria."
         },
         {
           "id": 4,
           "question": "Do you support Internation payments?",
-          "answer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi."
+          "answer": "Absolutely! Lexicon supports a wide range of international payment methods, including credit cards, debit cards, and popular payment gateways like PayPal. No matter where you are in the world, you can easily purchase and enjoy your favorite eBooks with secure and hassle-free transactions."
         }
     ];
     
