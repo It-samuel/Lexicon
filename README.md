@@ -1,70 +1,105 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lexicon Project 📚🚀
 
-## Available Scripts
+Welcome to the **Lexicon Project**! This full-stack e-commerce web application provides a seamless shopping experience for users looking to browse, purchase, and manage their favorite tech books. 
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **User Authentication**: Secure login, registration, and logout functionality.  
+- **Guest Login**: Users can explore the platform without creating an account.  
+- **Product Catalog**: Browse a wide range of tech books with detailed descriptions.  
+- **Search & Filtering**: Easily find books using search, categories, and filters.  
+- **Shopping Cart**: Add, remove, and update items before checkout.  
+- **Secure Checkout**: Integrated payment gateway for smooth transactions.  
+- **Order Management**: View order history, track shipments, and manage purchases.  
+- **Wishlist**: Save favorite books for future purchases.  
+- **User Dashboard**: Manage profile, order history, and saved items.  
+- **Admin Panel**: Add, edit, and manage books, orders, and users.  
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.  
+- **Reviews & Ratings**: Users can leave feedback and rate books.  
+- **Dark Mode**: Switch between light and dark themes for better usability.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React, Tailwind CSS  
+- **Backend**: Node.js, Express.js  
+- **Database**:hosted on Azure App Service  
+- **Authentication**: JWT-based authentication    
+- **Hosting**: Azure App Service (Frontend & Backend)  
+- **Storage**: Azure Blob Storage for book images and assets  
 
-### `npm test`
+## Architecture  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Below is the high-level architecture of the **Lexicon Project**, showcasing how different components interact:  
 
-### `npm run build`
+![Lexicon Project Architecture](./docs/architecture-diagram.png)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Architecture Overview**  
+1. **Frontend (React, Tailwind CSS)**
+   - Hosted on **Azure App Service**  
+   - Communicates with backend via **REST APIs**  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Backend (Node.js, Express.js)**
+   - Also hosted on **Azure App Service**  
+   - Handles authentication, orders, and API endpoints  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Database (MongoDB on Azure Cosmos DB)**
+   - Stores users, books, orders, and cart details  
 
-### `npm run eject`
+4. **Storage (Azure Blob Storage)**
+   - Stores book images and other media assets  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **Payment Gateway (Stripe or PayPal)**
+   - Secure checkout integration  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:  
+   ```sh
+   git clone https://github.com/your-username/lexicon-project.git
+   cd lexicon-project
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install dependencies:  
+   ```sh
+   npm install
+   ```
 
-## Learn More
+3. Start the development server:  
+   ```sh
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Navigate to `http://localhost:3000` in your browser.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Deployment on Azure  
 
-### Code Splitting
+### **Frontend Deployment**  
+1. Build the project:  
+   ```sh
+   npm run build
+   ```
+2. Deploy to Azure App Service using the Azure CLI:  
+   ```sh
+   az webapp up --name lexicon-frontend --resource-group your-resource-group
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Backend Deployment**  
+1. Set up the environment variables in Azure App Service  
+2. Deploy using the Azure CLI:  
+   ```sh
+   az webapp up --name lexicon-backend --resource-group your-resource-group
+   ```
 
-### Analyzing the Bundle Size
+## Contributing  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions are welcome! Feel free to fork the repo, open an issue, or submit a pull request.  
 
-### Making a Progressive Web App
+## License  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License.  
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🚀 Happy coding! If you find this project useful, don't forget to ⭐ star the repository!
+```
